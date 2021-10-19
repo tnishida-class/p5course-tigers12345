@@ -17,3 +17,11 @@ function setup() {
 //     rect(i * 20, i * 20, 20, 20);
 //   }
 // }
+
+function setup() {
+  createCanvas(300,100);
+
+  ellipse(200,200,100);
+
+
+  }

@@ -9,13 +9,19 @@ function setup(){
 
 function draw(){
   background(160, 192, 255);
+
+
   ellipse(x, y, 50);
+
   if(keyIsDown(LEFT_ARROW)){ x -= 5; }
   if(keyIsDown(RIGHT_ARROW)){ x += 5; }
   if(keyIsDown(UP_ARROW)){ y -= 5; }
   if(keyIsDown(DOWN_ARROW)){ y += 5; }
   if(keyIsDown("A".charCodeAt(0))){ x+= 10; }
   if(keyIsDown(" ".charCodeAt(0))){ x-= 10; }
+  if(keyIsDown(ENTER)){fill(0,255,0)}
+  if(keyIsDown(SHIFT)){fill(0,0,255)}
+
 }
 
 // イベントハンドラを使用するパターン

@@ -65,5 +65,5 @@ if(smallest>scores[i]){
 
   // BLANK[5] 平均点の線を引きます
 stroke(0,28,225)
-line(0,average,width,average)
+line(0,height*(100-average)/100,width,height*(100-average)/100)
 }

@@ -15,6 +15,16 @@ function setup(){
 }
 
 function calendar(y, m){
+  fill(0);
+  noStroke();
+  textSize(16);
+  text(y + "年"+m+"月",250,16);
+  fill(255,0,0);text("日",34,70);fill(0);text("月",134,70);
+  for(i=0;i<7;i++){
+    noFill();
+    stroke(2)
+    rect(i*100,90,100,80);rect(i*100,170,100,80);
+  }
   let dow = dayOfWeek(y, m, 1);
   for(let d = 1; d <= daysInMonth(y, m); d++){
     // BLANK[3] (hint: まずは daysInYear, dayOfWeek を作ろう)
@@ -27,6 +37,13 @@ function isLeapYear(y){
 
 function daysInYear(y){
   // BLANK[1]
+  // if(isleapYear(y)){
+  //   return 366;
+  // }
+  // else{
+  //   return 365;
+  // }
+  return isLeapYear(y) ? 366 : 365;
 }
 
 function daysInMonth(y, m){
@@ -51,6 +68,13 @@ function dayOfYear(y, m, d){
 
 function dayOfWeek(y, m, d){
   // BLANK[2]
+  let count = 0;
+  for(let i = 1970; i<y; i++){
+  count += dayInYear(i);
+  }
+  count += dayOfYear(y,m,d);
+
+  return (count+3) % 7;
 }
 
 function dayOfWeekAsString(dow){
